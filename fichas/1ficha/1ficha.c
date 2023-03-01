@@ -44,7 +44,7 @@ void trianguloH (int n){
     printf("\n");
 }
 
-// ! Full ChatGPT - I have no idea what is going on, help me
+// ! Full ChatGP
 void trianguloV (int n){
     printf ("Triangulo vertical de dimensões %d:\n", n);
     int i, j, k;
@@ -61,17 +61,34 @@ void trianguloV (int n){
 }
 
 // TODO Later
-int circulo (int raio){
-    printf ("Circulo %d ainda não está feito...\n", raio);
-    return 0;
+int circulo(int raio){
+    int i, j, contador=0;
+    for(i=-raio; i<=raio; i++){
+        for(j=-raio; j<=raio; j++){
+            if(i*i+j*j <= raio*raio){
+                printf("#");
+                contador++;
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return contador;
 }
 
 int main()
 {
+    int raio, n;
     quadrado (5);
     xadrez (5);
     trianguloH (5);
     trianguloV (5);
-    printf ("\nForam usados %d caracteres para fazer o circulo\n", circulo (5));
+    printf("Insira o raio do circulo: ");
+    scanf("%d", &raio);
+    n = circulo(raio);
+    printf("O circulo contem %d caracteres '#'.\n", n);
     return 0;
+
 }
