@@ -1,8 +1,10 @@
 float multInt1 (int n, float m){
-    int r = 0;
-    while(r<n*m){
-        r = r + m;
+    float r = 0;
+    
+    for(int i = 0; i < n; i++) {
+        r += m; // r = r + m
     }
+
     return r;
 }
 
